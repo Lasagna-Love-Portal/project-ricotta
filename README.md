@@ -2,7 +2,7 @@
 
 Project Ricotta is a volunteer effort to build a new web and mobile platform for [Lasagna Love](https://www.lasagnalove.org) volunteers. Project Ricotta is designed to scale kindness by building the digital tools to support Lasagna Love chefs, recipients, and donors in contributing to sharing lasagnas between neighbors.
 
-Project Ricotta is building and operating the portal, website, data stack, and infrastructure for Lasagna Love. It’s also providing an opportunity for people new to open source software development, or people who want to stretch their software development skills, or just want to contribute to a great project,  to work with a friendly, open, collaborative team.
+Project Ricotta is constructing and managing the portal, website, data stack, and infrastructure to improve the Lasagna Love volunteer and requester experience. In addition, it offers a chance for individuals who are either new to open source software development, looking to enhance their software development abilities, or simply interested in participating in a meaningful project, to collaborate with a welcoming, open-minded, and cooperative team.
 
 You can join Project Ricotta as a developer, product manager, or ops engineer. We’ve got three classes of contributors: contributors, maintainers, and mentors.
 
