@@ -1,0 +1,12 @@
+{
+  "name": "project-ricotta",
+  "version": "1.0.0",
+  "description": "Project Ricotta is a volunteer effort to build a new web and mobile platform for [Lasagna Love](https://www.lasagnalove.org) volunteers. Project Ricotta is designed to scale kindness by building the digital tools to support Lasagna Love chefs, recipients, and donors in contributing to sharing lasagnas between neighbors.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
