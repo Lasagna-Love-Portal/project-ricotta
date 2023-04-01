@@ -13,4 +13,4 @@ Need more help? Join our open office hours, which are currently Friday evenings,
 
 | Name/Email: | Github Profile: | Tasks: |
 | ------------- | ------------- | ------------ |
-| [Esther Kearney](estherrose046@gmail.com) | [codarose](https://github.com/codarose) |  |
+| [Esther Kearney](estherrose046@gmail.com) | [codarose](https://github.com/codarose) |  | test
