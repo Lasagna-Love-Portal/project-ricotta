@@ -1,0 +1,21 @@
+{
+  "name": "database",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo testing Node server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "EPL-2.0",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.13.1",
+    "dotenv": "^16.0.3"
+  },
+  "devDependencies": {
+    "supabase": "^1.46.5"
+  }
+}
