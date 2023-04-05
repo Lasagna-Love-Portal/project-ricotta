@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "./images/logo-vrt1.png";
 import Carousel from "react-material-ui-carousel";
-import { Paper } from "@mui/material";
+import { Paper, Card, Button } from "@mui/material";
 
 const welcomeSlides = [
   {
@@ -35,24 +35,28 @@ const welcomeSlides = [
 
 export default function Welcome() {
   return (
-    <div className="welcome">
+    <Paper className="welcome-screen">
       <header>
         <img src={logo} alt="Logo" />
       </header>
-      <Carousel>
+      <Carousel className="welcome-carousel">
         {welcomeSlides.map((item, i) => {
           return (
-            <Paper key={item.i}>
+            <Card className="welcome-slide" key={item.i}>
               <img src={item.img} alt={item.alt} />
               <h1>{item.heading}</h1>
               <p>{item.description}</p>
-              <p>
-                Already have an account? <span>Log In</span>
-              </p>
-            </Paper>
+            </Card>
           );
         })}
       </Carousel>
-    </div>
+
+      <div className="create-acct-wrapper">
+        <Button className="create-acct-btn">Create Account</Button>
+        <p>
+          Already have an account? <span className="logIn-link">Log In</span>
+        </p>
+      </div>
+    </Paper>
   );
 }
