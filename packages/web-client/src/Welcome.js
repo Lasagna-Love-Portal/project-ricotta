@@ -2,6 +2,8 @@ import React from "react";
 import logo from "./images/logo-vrt1.png";
 import Carousel from "react-material-ui-carousel";
 import { Paper, Card, Button } from "@mui/material";
+import "./App.css";
+import { useTheme } from "@mui/material/styles";
 
 const welcomeSlides = [
   {
@@ -34,25 +36,54 @@ const welcomeSlides = [
 ];
 
 export default function Welcome() {
+  const theme = useTheme();
   return (
-    <Paper className="welcome-screen">
-      <header>
-        <img src={logo} alt="Logo" />
+    <Paper className="welcome-screen" elevation={0}>
+      <header className="welcome-header">
+        <img src={logo} alt="Logo" className="logo" />
       </header>
-      <Carousel className="welcome-carousel">
+      <Carousel
+        className="welcome-carousel"
+        elevation={0}
+        indicatorIconButtonProps={{
+          style: { color: theme.palette.text.secondary },
+        }}
+        activeIndicatorIconButtonProps={{
+          style: { color: theme.palette.primary.main },
+        }}
+      >
         {welcomeSlides.map((item, i) => {
           return (
-            <Card className="welcome-slide" key={item.i}>
-              <img src={item.img} alt={item.alt} />
-              <h1>{item.heading}</h1>
-              <p>{item.description}</p>
+            <Card className="welcome-slide" key={item.i} elevation={0}>
+              <img src={item.img} alt={item.alt} className="welcome-image" />
+              <div className="slide-text">
+                <h1>{item.heading}</h1>
+                <p>{item.description}</p>
+              </div>
             </Card>
           );
         })}
       </Carousel>
 
       <div className="create-acct-wrapper">
-        <Button className="create-acct-btn">Create Account</Button>
+        <Button
+          className="main-btn create-acct-btn"
+          /*variant={theme.pill} not working*/
+          fullWidth="true"
+          style={{
+            backgroundColor: "#ED7538",
+            color: "#FFFFFF",
+            textTransform: "none",
+            borderRadius: "50px",
+            marginTop: "40px",
+            marginBottom: "14px",
+            maxWidth: "350px",
+            paddingTop: "15px",
+            paddingBottom: "15px",
+          }}
+        >
+          Create Account
+        </Button>
         <p>
           Already have an account? <span className="logIn-link">Log In</span>
         </p>
