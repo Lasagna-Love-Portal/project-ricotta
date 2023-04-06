@@ -1,9 +1,10 @@
 import React from "react";
+import { useTheme } from "@mui/material/styles";
 import logo from "./images/logo-vrt1.png";
 import Carousel from "react-material-ui-carousel";
-import { Paper, Card, Button } from "@mui/material";
+import { Paper, Card } from "@mui/material";
 import "./App.css";
-import { useTheme } from "@mui/material/styles";
+import ReusableButton from "./components/ReusableButton";
 
 const welcomeSlides = [
   {
@@ -66,24 +67,13 @@ export default function Welcome() {
       </Carousel>
 
       <div className="create-acct-wrapper">
-        <Button
-          className="main-btn create-acct-btn"
-          /*variant={theme.pill} not working*/
+        <ReusableButton
+          buttonVariant={theme.Button.pill}
+          buttonColor={theme.Button.primary}
+          style={theme.Button.pill.primary.style}
           fullWidth="true"
-          style={{
-            backgroundColor: "#ED7538",
-            color: "#FFFFFF",
-            textTransform: "none",
-            borderRadius: "50px",
-            marginTop: "40px",
-            marginBottom: "14px",
-            maxWidth: "350px",
-            paddingTop: "15px",
-            paddingBottom: "15px",
-          }}
-        >
-          Create Account
-        </Button>
+          buttonText="Create Account"
+        />
         <p>
           Already have an account? <span className="logIn-link">Log In</span>
         </p>

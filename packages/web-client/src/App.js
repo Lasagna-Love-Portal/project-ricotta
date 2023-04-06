@@ -42,6 +42,38 @@ const theme = createTheme({
       fontWeight: 700,
     },
   },
+  /*Button: {
+    defaultProps: {
+      variant: "contained",
+      color: "inherit",
+      style: {
+        textTransform: "none",
+        backgroundColor: "#ED7538",
+      },
+    },
+    variants: [
+      {
+        props: { variant: "pill" },
+        style: {
+          borderRadius: 50,
+        },
+      },
+      {
+        props: { variant: "pill", color: "main" },
+        style: {
+          backgroundColor: "#ED7538",
+          color: "#FFFFFF",
+          textTransform: "none",
+          borderRadius: "50px",
+          marginTop: "40px",
+          marginBottom: "14px",
+          maxWidth: "350px",
+          paddingTop: "15px",
+          paddingBottom: "15px",
+        },
+      },
+    ],
+  },*/
 });
 
 function App() {
