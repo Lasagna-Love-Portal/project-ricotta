@@ -68,10 +68,8 @@ export default function Welcome() {
 
       <div className="create-acct-wrapper">
         <ReusableButton
-          buttonVariant={theme.Button.pill}
-          buttonColor={theme.Button.primary}
-          style={theme.Button.pill.primary.style}
-          fullWidth="true"
+          buttonVariant="pill"
+          buttonColor="primary"
           buttonText="Create Account"
         />
         <p>

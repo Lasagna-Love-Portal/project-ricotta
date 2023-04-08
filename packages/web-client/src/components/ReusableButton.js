@@ -3,11 +3,7 @@ import { Button } from "@mui/material";
 
 const ReusableButton = (props) => {
   return (
-    <Button
-      variant={props.buttonVariant}
-      color={props.buttonColor}
-      style={props.buttonStyle}
-    >
+    <Button variant={props.buttonVariant} color={props.buttonColor}>
       {props.buttonText}
     </Button>
   );

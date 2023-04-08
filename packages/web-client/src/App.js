@@ -1,4 +1,4 @@
-import { createTheme, ThemeProvider } from "@mui/material";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 import "./App.css";
 import Welcome from "./Welcome";
 
@@ -42,38 +42,38 @@ const theme = createTheme({
       fontWeight: 700,
     },
   },
-  /*Button: {
-    defaultProps: {
-      variant: "contained",
-      color: "inherit",
-      style: {
-        textTransform: "none",
-        backgroundColor: "#ED7538",
-      },
-    },
-    variants: [
-      {
-        props: { variant: "pill" },
+  components: {
+    MuiButton: {
+      defaultProps: {
+        variant: "contained",
+        color: "inherit",
         style: {
-          borderRadius: 50,
-        },
-      },
-      {
-        props: { variant: "pill", color: "main" },
-        style: {
-          backgroundColor: "#ED7538",
-          color: "#FFFFFF",
           textTransform: "none",
-          borderRadius: "50px",
-          marginTop: "40px",
-          marginBottom: "14px",
-          maxWidth: "350px",
-          paddingTop: "15px",
-          paddingBottom: "15px",
+          backgroundColor: "#ED7538",
         },
       },
-    ],
-  },*/
+      variants: [
+        {
+          props: { variant: "pill" },
+          style: {
+            borderRadius: 50,
+          },
+        },
+        {
+          props: { variant: "pill", color: "primary" },
+          style: {
+            backgroundColor: "#ED7538",
+            color: "#FFFFFF",
+            borderRadius: "50px",
+            margin: "40px 0 14px 0",
+            width: "100%",
+            maxWidth: "350px",
+            padding: "15px",
+          },
+        },
+      ],
+    },
+  },
 });
 
 function App() {
