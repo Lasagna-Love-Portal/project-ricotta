@@ -1,17 +1,23 @@
-.App {
-  text-align: center;
-}
 /* ----- GENERAL STYLES ----- */
+html,
+body,
+#root {
+  height: 100vh;
+  width: 100vw;
+}
+
 .app {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
+  text-align: center;
 }
 
 /* ----- WELCOME SCREEN ----- */
 .welcome-screen {
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
