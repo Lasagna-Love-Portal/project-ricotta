@@ -9,6 +9,7 @@ body,
 .app {
   width: 100%;
   height: 100%;
+  overflow: auto;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -18,6 +19,7 @@ body,
 .welcome-screen {
   width: 100%;
   height: 100%;
+  overflow: auto;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -31,6 +33,7 @@ body,
 
 .welcome-carousel {
   align-self: stretch;
+  overflow: visible !important; /*The only way I could get the overflow to show-(tried adding inline as well)*/
 }
 
 .welcome-slide {
