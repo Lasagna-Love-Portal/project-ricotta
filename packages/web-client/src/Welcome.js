@@ -2,7 +2,7 @@ import React from "react";
 import { useTheme } from "@mui/material/styles";
 import logo from "./images/logo-vrt1.png";
 import Carousel from "react-material-ui-carousel";
-import { Paper, Card } from "@mui/material";
+import { Paper, Card, Typography } from "@mui/material";
 import "./App.css";
 import ReusableButton from "./components/ReusableButton";
 
@@ -58,8 +58,8 @@ export default function Welcome() {
             <Card className="welcome-slide" key={item.i} elevation={0}>
               <img src={item.img} alt={item.alt} className="welcome-image" />
               <div className="slide-text">
-                <h1>{item.heading}</h1>
-                <p>{item.description}</p>
+                <Typography variant="h1">{item.heading}</Typography>
+                <Typography variant="body1">{item.description}</Typography>
               </div>
             </Card>
           );
@@ -72,9 +72,9 @@ export default function Welcome() {
           buttonColor="primary"
           buttonText="Create Account"
         />
-        <p>
+        <Typography variant="body1">
           Already have an account? <span className="logIn-link">Log In</span>
-        </p>
+        </Typography>
       </div>
     </Paper>
   );

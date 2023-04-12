@@ -26,7 +26,7 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: "Lato, sans-serif",
+    fontFamily: ["Lato", "sans-serif"].join(","),
     fontSize: "16px",
     h1: {
       fontSize: "2.5rem",
