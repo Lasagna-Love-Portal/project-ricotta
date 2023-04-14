@@ -49,9 +49,9 @@ body,
 }
 
 .slide-text {
-  width: 81%;
-  max-width: 300px;
-  min-height: 170px;
+  width: 85%;
+  max-width: 320px;
+  min-height: 180px;
   display: flex;
   flex-direction: column;
   justify-content: center;
