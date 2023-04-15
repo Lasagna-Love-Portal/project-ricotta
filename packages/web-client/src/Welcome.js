@@ -3,7 +3,7 @@ import { useTheme } from "@mui/material/styles";
 import logo from "./images/logo-vrt1.png";
 import Carousel from "react-material-ui-carousel";
 import { Paper, Card, Typography, Link } from "@mui/material";
-import "./App.css";
+import "./welcome.css";
 import ReusableButton from "./components/ReusableButton";
 
 const welcomeSlides = [
@@ -80,7 +80,10 @@ export default function Welcome() {
           buttonText="Create Account"
         />
         <Typography variant="body1">
-          Already have an account? <Link href="#">Log In</Link>
+          Already have an account?{" "}
+          <Link href="#" variant="button">
+            Log In
+          </Link>
         </Typography>
       </div>
     </Paper>

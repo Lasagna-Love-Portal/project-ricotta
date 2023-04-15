@@ -73,6 +73,20 @@ const theme = createTheme({
         },
       ],
     },
+    MuiLink: {
+      variants: [
+        {
+          props: { variant: "button" },
+          style: {
+            color: "#CA693A",
+            fontSize: "inherit",
+            fontWeight: "bold",
+            textTransform: "none",
+            textDecoration: "underline #CA693A",
+          },
+        },
+      ],
+    },
   },
 });
 
