@@ -29,7 +29,7 @@ const welcomeSlides = [
   },
   {
     img: require("./images/kelly-a.png"),
-    heading: "Sign Up For Events",
+    heading2: "Sign Up For Events",
     description:
       "Check your events tab in your matches view to see all upcoming events you could volounter with.",
     alt: "Man and woman standing before packaged food dressed in Lasagna Love t shirts",
@@ -58,7 +58,14 @@ export default function Welcome() {
             <Card className="welcome-slide" key={item.i} elevation={0}>
               <img src={item.img} alt={item.alt} className="welcome-image" />
               <div className="slide-text">
-                <Typography variant="h1">{item.heading}</Typography>
+                {item.heading ? (
+                  <Typography variant="h1">{item.heading}</Typography>
+                ) : (
+                  <Typography variant="h1" style={{ fontSize: "34px" }}>
+                    {item.heading2}
+                  </Typography>
+                )}
+
                 <Typography variant="body1">{item.description}</Typography>
               </div>
             </Card>
