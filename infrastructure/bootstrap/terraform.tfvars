@@ -10,13 +10,14 @@ workspaces = {
       "not-actually-used",
     ]
   }
-  raw-sandbox-dev = {
-    project     = "first-sandbox"
+  raw-sandbox-mike = {
+    project     = "raw-sandbox"
     description = "Used for standup of basic instance for initial testing"
     env         = "dev"
     tags = [
       "raw_sandbox",
-      "env:dev",
+      "env:mike-dev",
+      "dev:mike",
     ]
   }
 }
