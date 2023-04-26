@@ -90,11 +90,6 @@ resource "azurerm_storage_account" "my_storage_account" {
   account_replication_type = "LRS"
 }
 
-# Create (and display) an SSH key
-resource "tls_private_key" "this" {
-  algorithm = "ED25519"
-}
-
 # Create virtual machine
 resource "azurerm_linux_virtual_machine" "my_terraform_vm" {
   name                  = "myVM"
@@ -122,7 +117,7 @@ resource "azurerm_linux_virtual_machine" "my_terraform_vm" {
 
   admin_ssh_key {
     username   = "azureuser"
-    public_key = tls_private_key.example_ssh.public_key_openssh
+    public_key = var.public_key
   }
 
   boot_diagnostics {
