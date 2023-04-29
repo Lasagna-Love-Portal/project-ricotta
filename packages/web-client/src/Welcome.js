@@ -59,13 +59,12 @@ export default function Welcome () {
             <Card className='welcome-slide' key={item.i} elevation={0}>
               <img src={item.img} alt={item.alt} className='welcome-image' />
               <div className='slide-text'>
-                {
-                  item.heading
-                  ? (
-                    <Typography variant='h1'>
+                { item.heading ?
+                  ( <Typography variant='h1'>
                       {item.heading}
                     </Typography>
-                  ) : (
+                  ) :
+                  (
                     <Typography variant='h1' style={{ fontSize: 34 }}>
                       {item.heading2}
                     </Typography>
