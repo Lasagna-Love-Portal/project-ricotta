@@ -60,8 +60,8 @@ export default function Welcome () {
               <img src={item.img} alt={item.alt} className='welcome-image' />
               <div className='slide-text'>
                 {
-                  item.heading ? 
-                  (
+                  item.heading
+                  ? (
                     <Typography variant='h1'>
                       {item.heading}
                     </Typography>
@@ -85,7 +85,7 @@ export default function Welcome () {
           buttonText='Create Account'
         />
         <Typography variant='body1'>
-            Already have an account?
+          Already have an account?
           <Link href='#' variant='button'>
             Log In
           </Link>
