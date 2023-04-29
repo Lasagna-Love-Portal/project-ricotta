@@ -2,7 +2,7 @@
 
 Project Ricotta is a volunteer effort to build a new web and mobile platform for [Lasagna Love](https://www.lasagnalove.org) volunteers. Project Ricotta is designed to scale kindness by building the digital tools to support Lasagna Love chefs, recipients, and donors in contributing to sharing lasagnas between neighbors.
 
-Project Ricotta is constructing and managing the portal, website, data stack, and infrastructure to improve the Lasagna Love volunteer and requester experience.
+Project Ricotta is constructing and managing the portal, site, data stack, and infrastructure to improve the Lasagna Love volunteer and requester experience.
 In addition, it offers a chance for individuals who are either new to open source software development, looking to enhance their software development abilities, or simply interested in participating in a meaningful project, to collaborate with a welcoming, open-minded, and cooperative team.
 
 You can join Project Ricotta as a developer, product manager, or ops engineer. We’ve got three classes of contributors: contributors, maintainers, and mentors.
@@ -28,7 +28,7 @@ This document is fairly extensive, and we’ll be making it easier to read as we
 ### Community Code of Conduct
 
 The goal is to maintain a diverse community that's pleasant for everyone. That's why we would greatly appreciate it if everyone contributing to and interacting with the community also followed this Code of Conduct.
-The Code of Conduct covers our behavior as members of the community, in any forum: mailing list, wiki, website, Slack, Jira, public meeting or private correspondence. The Code of Conduct is heavily based on the Ubuntu Code of Conduct, and the Pylons Code of Conduct, and borrows heavily and directly from the Celery Code of Conduct.
+The Code of Conduct covers our behavior as members of the community, in any forum: mailing list, wiki, site, Slack, Jira, public meeting or private correspondence. The Code of Conduct is heavily based on the Ubuntu Code of Conduct, and the Pylons Code of Conduct, and borrows heavily and directly from the Celery Code of Conduct.
 
 #### Be considerate
 
@@ -62,9 +62,9 @@ Developers on every project come and go and Project Ricotta is no different. Whe
 
 ### Making Contributions
 
-If you are a contributor from outside our project, please fork the repo and send us a PR from your fork.
+If you are a contributor from outside our project, please fork the repository and send us a PR from your fork.
 
-Members of the project should create named branches, ideally namespaced to your user. For example, a Github user named Jo Doe would run `git checkout -b jodoe/my-contribution` to organize their contribution branches.
+Members of the project should create named branches, ideally namespaced to your user. For example, a GitHub user named Jo Doe would run `git checkout -b jodoe/my-contribution` to organize their contribution branches.
 
 Once you're ready, open a [pull request](https://github.com/Lasagna-Love-Portal/project-ricotta/pulls) with a clear description of your changes (you can read more about pull requests on GitHub [here](http://help.github.com/pull-requests/)).
 
