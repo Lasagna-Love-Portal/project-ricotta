@@ -10,7 +10,6 @@ Mentors manage office hours, support our hackathons, and provide guidance to the
 
 Need more help? Join our open office hours, which are currently Friday evenings, starting March 24th, from 4-8 ET.
 
-
 ## Contributing
 
 We welcome (and appreciate) contributions from the community! Your work here results in a tangible, measurable, wholeheartedly good impact on the world: everything we do here makes it easier to connect people, neighbor by neighbor, lasagna by lasagna!
