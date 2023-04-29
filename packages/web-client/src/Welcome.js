@@ -34,8 +34,8 @@ const welcomeSlides = [
     description:
       'Check your events tab in your matches view to see all upcoming events you could volunteer with.',
     alt: 'Man and woman standing before packaged food dressed in Lasagna Love t shirts'
-  },
-];
+  }
+]
 
 export default function Welcome () {
   const theme = useTheme()
@@ -48,10 +48,10 @@ export default function Welcome () {
         className='welcome-carousel'
         elevation={0}
         indicatorIconButtonProps={{
-          style: { color: theme.palette.text.secondary },
+          style: { color: theme.palette.text.secondary }
         }}
         activeIndicatorIconButtonProps={{
-          style: { color: theme.palette.primary.main },
+          style: { color: theme.palette.primary.main }
         }}
       >
         {welcomeSlides.map((item, i) => {
@@ -59,14 +59,18 @@ export default function Welcome () {
             <Card className='welcome-slide' key={item.i} elevation={0}>
               <img src={item.img} alt={item.alt} className='welcome-image' />
               <div className='slide-text'>
-                {item.heading ? (
-                  <Typography variant='h1'>{item.heading}</Typography>
-                ) : (
-                  <Typography variant='h1' style={{ fontSize: 34 }}>
-                    {item.heading2}
-                  </Typography>
-                )}
-
+                {
+                  item.heading ? 
+                  (
+                    <Typography variant='h1'>
+                      {item.heading}
+                    </Typography>
+                  ) : (
+                    <Typography variant='h1' style={{ fontSize: 34 }}>
+                      {item.heading2}
+                    </Typography>
+                  )
+                }
                 <Typography variant='body1'>{item.description}</Typography>
               </div>
             </Card>
@@ -81,12 +85,12 @@ export default function Welcome () {
           buttonText='Create Account'
         />
         <Typography variant='body1'>
-          Already have an account?{''}
+            Already have an account?
           <Link href='#' variant='button'>
             Log In
           </Link>
         </Typography>
       </div>
     </Paper>
-  );
+  )
 }
