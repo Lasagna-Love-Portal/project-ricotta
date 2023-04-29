@@ -66,7 +66,7 @@ If you are a contributor from outside our project, please fork the repository an
 
 Members of the project should create named branches, ideally namespaced to your user. For example, a GitHub user named Jo Doe would run `git checkout -b jodoe/my-contribution` to organize their contribution branches.
 
-The Dockerized environment can be used for development. Once you have [Docker installed](https://www.docker.com/products/docker-desktop/), run `docker-compose build` and `docker-compose up` from the top-level directory of the repository.
+The Dockerized environment can be used for development. Once you have [Docker installed](https://www.docker.com/products/docker-desktop/), run `docker-compose build` and `docker-compose up` from the top-level directory of the repository. You can then navigate to `http://localhost:3000` in your browser to access the application.
 
 Once you're ready, open a [pull request](https://github.com/Lasagna-Love-Portal/project-ricotta/pulls) with a clear description of your changes (you can read more about pull requests on GitHub [here](http://help.github.com/pull-requests/)).
 
