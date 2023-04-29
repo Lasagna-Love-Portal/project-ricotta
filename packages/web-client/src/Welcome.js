@@ -18,20 +18,21 @@ const welcomeSlides = [
     img: require("./images/lasagna.png"),
     heading: "Earn LL Points",
     description:
-      "1 lasagna delivered = 1 point. The more points you have the more benefits you’ll receive.",
+      "1 lasagna delivered = 1 point. The more points you have the more benefits you'll receive.",
     alt: "Lasagna topped with heart shaped cheese and basil flowers",
   },
   {
     img: require("./images/group.png"),
     heading: "Donate to Help",
-    description: `If you can’t cook one week donate your funds for cooking that week. Any help counts.`,
+    description: 
+      "If you can't cook one week donate your funds for cooking that week. Any help counts.",
     alt: "Eight people stand smiling holding a Lasagna Love banner",
   },
   {
     img: require("./images/kelly-a.png"),
     heading2: "Sign Up For Events",
     description:
-      "Check your events tab in your matches view to see all upcoming events you could volounter with.",
+      "Check your events tab in your matches view to see all upcoming events you could volunteer with.",
     alt: "Man and woman standing before packaged food dressed in Lasagna Love t shirts",
   },
 ];
