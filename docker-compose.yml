@@ -19,7 +19,7 @@ services:
     environment:
       - NODE_ENV=development
     ports:
-      - "8000:8000"
+      - "3000:3000"
     depends_on:
-      - backend
+      - server-api
     command: npm run start
