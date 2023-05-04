@@ -33,15 +33,3 @@ services:
   #   ports:
   #     - '8080:8080'
   #     - "80:80"
-
-  web-client:
-    build:
-      context: ./packages/web-client
-      dockerfile: Dockerfile
-    environment:
-      - NODE_ENV=development
-    ports:
-      - "3000:3000"
-    depends_on:
-      - server-api
-    command: npm run start
