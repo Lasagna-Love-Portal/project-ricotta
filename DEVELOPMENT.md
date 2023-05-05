@@ -52,6 +52,19 @@ If you need to execute a command inside the application's environment (such as f
 1. Start the app (see above).
 2. `docker compose exec frontend /bin/sh` at the root of the repository.
 
+### Running the linter locally
+
+This repository uses github's Super Linter and we encourage running the linter
+against your changes before making a pull request to dev or main.
+You can run this locally using Docker:
+
+1. Obtain the Super Linter Docker container:
+    `docker pull github/super-linter:latest`
+2. Invoke Docker to run the Super Linter against your project directory:
+    `docker run -e RUN_LOCAL=true -v [path-to-project]:/tmp/lint github/super-linter`
+
+Where [path-to-project] is the full path to your project.
+
 ## Architecture
 
 Software Stack:
