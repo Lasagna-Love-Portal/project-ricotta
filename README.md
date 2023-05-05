@@ -9,6 +9,8 @@ You can join Project Ricotta as a developer, product manager, or ops engineer. W
 
 Mentors manage office hours, support our hackathons, and provide guidance to the project and its members. Maintainers lead the development of a specific component of the Project Ricotta experience, and make the final call on architecture and performance. Contributors are the backbone of Project Ricotta, and pick up and work on the tickets required to build and operate Project Ricotta.
 
+**For technical instructions on how to set up a local development environment, see [DEVELOPMENT.md](DEVELOPMENT.md)**
+
 Need more help? Join our open office hours, which are currently Friday evenings, starting March 24th, from 4-8 ET.
 
 ## Contributing
