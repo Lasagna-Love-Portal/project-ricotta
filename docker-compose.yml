@@ -6,7 +6,6 @@ services:
       context: .
       target: dev
     # File watching https://docs.docker.com/compose/file-watch/
-    # Doesn't seem to be fully working yet. Might want to just set up volume mounting for now?
     x-develop:
       watch:
         - path: ./src

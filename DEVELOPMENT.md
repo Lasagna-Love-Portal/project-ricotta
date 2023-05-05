@@ -22,18 +22,35 @@ When running on Windows, you'll need to ensure the Windows Subsystem for Linux (
 
 <!-- todo: update when hot-reloading actually works -->
 1. Ensure `docker` is installed.
-2. `docker compose up` in the root of the repository. (Note: you may see `Watchpack Error`s in the logs. That's fine, don't worry about them.)
+2. `docker compose up --build --wait` at the root of the repo.
 3. Make a request to the app (`curl` or in a browser): `localhost:3000`.
-4. Make changes and save your work.
-5. `ctrl + c` in the terminal where the app is running to stop the app.
-6. `docker compose build && docker compose up` to rebuild and relaunch app.
-7. To fully reset environment: `docker compose down` at root of repo.
+4. `docker compose down` to stop the app.
+
+### Viewing container logs
+
+1. Start the app (see above).
+2. `docker compose logs` at the root of the repo. (Add `-f` at the end to stream the logs)
+
+### Enabling "hot reloading"
+
+1. Ensure `experimental docker features` are enabled
+   1. Open the docker dashboard UI
+   2. Ensure you have >= v4.19.0 (bottom-left of window)
+   3. Settings (gear in top-right) -> "Features in development" -> "Experimental features" -> ensure "Access experimental features" is checked.
+   4. "Apply and restart"
+2. Start the app (see above).
+3. `docker compose alpha watch` at the root of the repo.
+4. Any saved changes to `src/`, `public/`, or `package.json` should be reflected in the running application. 
+
+> note: this uses a docker feature currently in alpha, which may change without notice. If this stops working, please notify the maintainers of this repo so that we can make any needed changes.
+
+<!-- Note to maintainers: In the event that this stops working, we will likely want to switch to volume bind-mounting the relevant files. That comes with a potential sync performance tradeoff on macOS. -->
 
 ### Execute commands inside the container
 
 If you need to execute a command inside the application's environment (such as for debugging):
-1. Ensure the application is running (`docker compose up`).
-2. In a second window, `docker compose exec frontend /bin/sh` (at the root of the repo). 
+1. Start the app (see above).
+2. `docker compose exec frontend /bin/sh` at the root of the repo.
 
 ## Architecture
  
