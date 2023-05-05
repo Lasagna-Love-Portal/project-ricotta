@@ -8,6 +8,16 @@ The primary tool used for building and running this repo is [Docker](https://www
 
 Some tasks may require the usage of a local [npm](https://www.npmjs.com/package/npm) installation, but we hope to remove that in the future.
 
+For Windows users:
+You can install Docker Desktop from https://docs.docker.com/desktop/install/windows-install/.
+When running on Windows, you'll need to ensure the Windows Subsystem for Linux (WSL) is installed and updated to WSL version 2. To do this:
+1. Open a Powershell windows as administrator
+2. Install WSL and a Linux distribution. To install Ubuntu 22.04:
+    `wsl --install -d Ubuntu-22.04`
+3. To make sure WSL is updated to WSL 2:
+    `wsl --update`
+4. Then make sure Docker Desktop sees the installed WSL and Linux distribution. In Docker Desktop's Settings | Resources | WSL integration, make sure the Ubuntu 22.04 distribution is enabled. You may need to hit Refresh and wait a minute or two for it to show. Once enabled, hit Apply & Restart to restart the Docker engine.
+
 ### Building and Running the app (dev mode)
 
 <!-- todo: update when hot-reloading actually works -->
