@@ -4,12 +4,12 @@
 
 ### Development Dependencies  
 
-The primary tool used for building and running this repo is [Docker](https://www.docker.com).
+The primary tool used for building and running this repository is [Docker](https://www.docker.com).
 
 Some tasks may require the usage of a local [npm](https://www.npmjs.com/package/npm) installation, but we hope to remove that in the future.
 
 For Windows users:
-You can install Docker Desktop from https://docs.docker.com/desktop/install/windows-install/.
+You can install Docker Desktop from [Docker](https://docs.docker.com/desktop/install/windows-install/).
 When running on Windows, you'll need to ensure the Windows Subsystem for Linux (WSL) is installed and updated to WSL version 2. To do this:
 1. Open a Powershell windows as administrator
 2. Install WSL and a Linux distribution. To install Ubuntu 22.04:
@@ -22,14 +22,14 @@ When running on Windows, you'll need to ensure the Windows Subsystem for Linux (
 
 <!-- todo: update when hot-reloading actually works -->
 1. Ensure `docker` is installed.
-2. `docker compose up --build --wait` at the root of the repo.
+2. `docker compose up --build --wait` at the root of the repository.
 3. Make a request to the app (`curl` or in a browser): `localhost:3000`.
 4. `docker compose down` to stop the app.
 
 ### Viewing container logs
 
 1. Start the app (see above).
-2. `docker compose logs` at the root of the repo. (Add `-f` at the end to stream the logs)
+2. `docker compose logs` at the root of the repository. (Add `-f` at the end to stream the logs)
 
 ### Enabling "hot reloading"
 
@@ -39,10 +39,10 @@ When running on Windows, you'll need to ensure the Windows Subsystem for Linux (
    3. Settings (gear in top-right) -> "Features in development" -> "Experimental features" -> ensure "Access experimental features" is checked.
    4. "Apply and restart"
 2. Start the app (see above).
-3. `docker compose alpha watch` at the root of the repo.
-4. Any saved changes to `src/`, `public/`, or `package.json` should be reflected in the running application. 
+3. `docker compose alpha watch` at the root of the repository.
+4. Any saved changes to `src/`, `public/`, or `package.json` should be reflected in the running application.
 
-> note: this uses a docker feature currently in alpha, which may change without notice. If this stops working, please notify the maintainers of this repo so that we can make any needed changes.
+> note: this uses a docker feature currently in alpha, which may change without notice. If this stops working, please notify the maintainers of this repository so that we can make any needed changes.
 
 <!-- Note to maintainers: In the event that this stops working, we will likely want to switch to volume bind-mounting the relevant files. That comes with a potential sync performance tradeoff on macOS. -->
 
@@ -50,10 +50,10 @@ When running on Windows, you'll need to ensure the Windows Subsystem for Linux (
 
 If you need to execute a command inside the application's environment (such as for debugging):
 1. Start the app (see above).
-2. `docker compose exec frontend /bin/sh` at the root of the repo.
+2. `docker compose exec frontend /bin/sh` at the root of the repository.
 
 ## Architecture
- 
+
 Software Stack:
 - react
 - next.js
