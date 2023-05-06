@@ -78,6 +78,16 @@ When you send a pull request, please be sure to include:
 - Use concise code comments (it can help to imagine that you are explaining your code to a total stranger).
 - Examples, if necessary.
 
+### Reviewing Contributions
+
+We encourage feedback and suggestions on pull requests to help make Project Ricotta the best it can be for our participants and volunteers.
+
+We encourage practicality over perfection. We expect our projects will iterate towards better over time and especially encourage contributions that advance Project Ricotta along the journey to being better.
+
+We encourage making issues in Github for suggestions and ideas.
+
+We encourage pull request reviewers to merge pull requests when they give approvals and they're able. Contributors who've opened pull requests and see an approval are able to merge and close their own pull requests but we prefer reviewer to merge and close wherever possible.
+
 ## Project Background
 
 Project Ricotta is a volunteer effort. We do our best to try and review contributions in a timely manner. Any code or feedback you share with us is hugely appreciated.
