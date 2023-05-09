@@ -1,5 +1,5 @@
 {
-  "name": "testing-src",
+  "name": "lasagna-love-portal",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -20,6 +20,10 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tailwindcss": "3.3.2",
-    "typescript": "5.0.4"
+    "typescript": "5.0.4",
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/material": "^5.11.15",
+    "react-material-ui-carousel": "^3.4.2"
   }
 }
