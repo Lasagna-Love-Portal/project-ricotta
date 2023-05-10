@@ -26,6 +26,10 @@ When running on Windows, you'll need to ensure the Windows Subsystem for Linux (
 3. Make a request to the app (`curl` or in a browser): `localhost:3000`.
 4. `docker compose down` to stop the app.
 
+### Debugging the app
+
+You can use Visual Studio Code or other tools to debug when developing locally with the Docker container. See the [next.js debugging configuration instructions](https://nextjs.org/docs/pages/building-your-application/configuring/debugging) for setup details.
+
 ### Viewing container logs
 
 1. Start the app (see above).
