@@ -2,7 +2,6 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import React from "react";
 import { useTheme } from "@mui/material/styles";
-//import logo from "public/logo-vrt1.png";
 import Carousel from "react-material-ui-carousel";
 import { Paper, Card, Typography, Link } from "@mui/material";
 import styles from "../components/Welcome.modules.css";
