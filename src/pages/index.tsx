@@ -49,13 +49,12 @@ const welcomeSlides = [
 export default function Home() {
   const theme = useTheme();
   return (
-    <main className="styles.welcome-screen" elevation={0}>
+    <main className="styles.welcome-screen">
       <header className="styles.welcome-header">
         <Image src={"logo-vrt1.png"} alt="Lasagna Love logo" width={90} height={79} className="logo" />
       </header>
       <Carousel
         className="styles.welcome-carousel"
-        elevation={0}
         indicatorIconButtonProps={{
           style: { color: theme.palette.text.secondary },
         }}
@@ -69,14 +68,7 @@ export default function Home() {
               <Image src={item.img} alt={item.alt} width={item.width} height={item.height}
                 className="styles.welcome-image" />
               <div className="styles.slide-text">
-                {item.heading ? (
-                  <Typography variant="h1">{item.heading}</Typography>
-                ) : (
-                  <Typography variant="h1" style={{ fontSize: "34px" }}>
-                    {item.heading2}
-                  </Typography>
-                )}
-
+                <Typography variant="h1">{item.heading}</Typography>
                 <Typography variant="body1">{item.description}</Typography>
               </div>
             </Card>
