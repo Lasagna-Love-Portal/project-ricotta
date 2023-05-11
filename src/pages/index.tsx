@@ -4,7 +4,7 @@ import React from "react";
 import { useTheme } from "@mui/material/styles";
 import Carousel from "react-material-ui-carousel";
 import { Paper, Card, Typography, Link } from "@mui/material";
-import styles from "../components/Welcome.modules.css";
+import styles from '@/styles/Welcome.module.css';
 import ReusableButton from "../components/ReusableButton";
 const inter = Inter({ subsets: ['latin'] })
 
@@ -64,7 +64,7 @@ export default function Home() {
       >
         {welcomeSlides.map((item, i) => {
           return (
-            <Card className="styles.welcome-slide" key={item.i} elevation={0}>
+            <Card className="styles.welcome-slide" key={i} elevation={0}>
               <Image src={item.img} alt={item.alt} width={item.width} height={item.height}
                 className="styles.welcome-image" />
               <div className="styles.slide-text">
