@@ -10,7 +10,6 @@ const theme = createTheme({
       secondary:
         "#D9D9D9" /*placeholder text, form borders, nav indicators, disabled btn background */,
       disabled: "#626262" /*disabled button text*/,
-      bold: "#171717" /*Confirmations and text after sign up*/,
     },
     primary: {
       main: "#ED7538",
@@ -54,24 +53,6 @@ const theme = createTheme({
         },
       },
       variants: [
-        {
-          props: { variant: "pill" },
-          style: {
-            borderRadius: 50,
-          },
-        },
-        {
-          props: { variant: "pill", color: "primary" },
-          style: {
-            backgroundColor: "#ED7538",
-            color: "#FFFFFF",
-            borderRadius: "50px",
-            margin: "40px 0 30px 0",
-            width: "100%",
-            maxWidth: "350px",
-            padding: "15px",
-          },
-        },
       ],
     },
     MuiLink: {
