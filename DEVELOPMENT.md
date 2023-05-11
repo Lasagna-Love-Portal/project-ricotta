@@ -56,6 +56,13 @@ If you need to execute a command inside the application's environment (such as f
 1. Start the app (see above).
 2. `docker compose exec frontend /bin/sh` at the root of the repository.
 
+### Running the app locally outside of Docker
+
+We encourage contributors to use Docker if possible to keep the build and runtime clean and prevent issues that come up with differing local setups. However, if there's a need to build and run locally, this project can be built as a standard next.js / TypeScript project. From the root of the checkout:
+
+1. Run `npx next build` to compile and build the project. Make sure to resolve any errors.
+2. Run `npx serve@latest out` to run the Next.js project using the default server.
+
 ### Running the linter locally
 
 This repository uses github's Super Linter and we encourage running the linter
