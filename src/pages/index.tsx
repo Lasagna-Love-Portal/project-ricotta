@@ -49,12 +49,12 @@ const welcomeSlides = [
 export default function Home() {
   const theme = useTheme();
   return (
-    <main className="styles.welcome-screen">
-      <header className="styles.welcome-header">
+    <main className={styles['welcome-screen']}>
+      <header className={styles['welcome-header']}>
         <Image src={"logo-vrt1.png"} alt="Lasagna Love logo" width={90} height={79} className="logo" />
       </header>
       <Carousel
-        className="styles.welcome-carousel"
+        className={styles['welcome-carousel']}
         indicatorIconButtonProps={{
           style: { color: theme.palette.text.secondary },
         }}
@@ -64,10 +64,10 @@ export default function Home() {
       >
         {welcomeSlides.map((item, i) => {
           return (
-            <Card className="styles.welcome-slide" key={i} elevation={0}>
+            <Card className={styles['welcome-slide']} key={i} elevation={0}>
               <Image src={item.img} alt={item.alt} width={item.width} height={item.height}
-                className="styles.welcome-image" />
-              <div className="styles.slide-text">
+                className={styles['welcome-image']} />
+              <div className={styles['slide-text']}>
                 <Typography variant="h1">{item.heading}</Typography>
                 <Typography variant="body1">{item.description}</Typography>
               </div>
@@ -76,7 +76,7 @@ export default function Home() {
         })}
       </Carousel>
 
-      <div className="styles.create-acct-wrapper">
+      <div className={styles['create-acct-wrapper']}>
         <ReusableButton
           buttonVariant="pill"
           buttonColor="primary"
