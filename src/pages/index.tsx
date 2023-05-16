@@ -89,6 +89,12 @@ export default function Home() {
           </Link>
         </Typography>
       </div>
+
+      <div>
+        <Typography>
+          <Link href="contributors">We extend a special thank you to all our Project Ricotta contributors!</Link>
+        </Typography>
+      </div>
     </main>
   );
 }
