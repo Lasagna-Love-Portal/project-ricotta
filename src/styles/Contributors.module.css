@@ -1,0 +1,10 @@
+/* List of Project Ricotta contributors */
+.cbox {
+  box-sizing: border-box;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  display: inline-block;
+  position: relative;
+}
