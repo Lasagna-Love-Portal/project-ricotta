@@ -1,7 +1,6 @@
-import '@/styles/globals.css'
+import "@/styles/globals.css";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import type { AppProps } from 'next/app'
-
+import type { AppProps } from "next/app";
 
 const theme = createTheme({
   palette: {
@@ -53,6 +52,25 @@ const theme = createTheme({
         },
       },
       variants: [
+        {
+          props: { variant: "contained" },
+          style: {
+            borderRadius: 50,
+            boxShadow: "none",
+          },
+        },
+        {
+          props: { variant: "contained", color: "primary" },
+          style: {
+            backgroundColor: "#ED7538",
+            color: "#FFFFFF",
+            borderRadius: "50px",
+            margin: "40px 0 30px 0",
+            width: "100%",
+            maxWidth: "350px",
+            padding: "15px",
+          },
+        },
       ],
     },
     MuiLink: {
@@ -77,5 +95,5 @@ export default function App({ Component, pageProps }: AppProps) {
     <ThemeProvider theme={theme}>
       <Component {...pageProps} />
     </ThemeProvider>
-  )
+  );
 }

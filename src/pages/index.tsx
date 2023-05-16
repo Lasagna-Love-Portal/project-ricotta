@@ -1,12 +1,12 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
+import Image from "next/image";
+import { Inter } from "next/font/google";
 import React from "react";
 import { useTheme } from "@mui/material/styles";
 import Carousel from "react-material-ui-carousel";
 import { Paper, Card, Typography, Link } from "@mui/material";
-import styles from '@/styles/Welcome.module.css';
+import styles from "@/styles/Welcome.module.css";
 import ReusableButton from "../components/ReusableButton";
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 const welcomeSlides = [
   {
@@ -49,12 +49,18 @@ const welcomeSlides = [
 export default function Home() {
   const theme = useTheme();
   return (
-    <main className={styles['welcome-screen']}>
-      <header className={styles['welcome-header']}>
-        <Image src={"logo-vrt1.png"} alt="Lasagna Love logo" width={90} height={79} className="logo" />
+    <main className={styles["welcome-screen"]}>
+      <header className={styles["welcome-header"]}>
+        <Image
+          src={"logo-vrt1.png"}
+          alt="Lasagna Love logo"
+          width={90}
+          height={79}
+          className="logo"
+        />
       </header>
       <Carousel
-        className={styles['welcome-carousel']}
+        className={styles["welcome-carousel"]}
         indicatorIconButtonProps={{
           style: { color: theme.palette.text.secondary },
         }}
@@ -64,10 +70,15 @@ export default function Home() {
       >
         {welcomeSlides.map((item, i) => {
           return (
-            <Card className={styles['welcome-slide']} key={i} elevation={0}>
-              <Image src={item.img} alt={item.alt} width={item.width} height={item.height}
-                className={styles['welcome-image']} />
-              <div className={styles['slide-text']}>
+            <Card className={styles["welcome-slide"]} key={i} elevation={0}>
+              <Image
+                src={item.img}
+                alt={item.alt}
+                width={item.width}
+                height={item.height}
+                className={styles["welcome-image"]}
+              />
+              <div className={styles["slide-text"]}>
                 <Typography variant="h1">{item.heading}</Typography>
                 <Typography variant="body1">{item.description}</Typography>
               </div>
@@ -76,9 +87,9 @@ export default function Home() {
         })}
       </Carousel>
 
-      <div className={styles['create-acct-wrapper']}>
+      <div className={styles["create-acct-wrapper"]}>
         <ReusableButton
-          buttonVariant="pill"
+          buttonVariant="contained"
           buttonColor="primary"
           buttonText="Create Account"
         />
@@ -92,7 +103,10 @@ export default function Home() {
 
       <div>
         <Typography>
-          <Link href="contributors">We extend a special thank you to all our Project Ricotta contributors!</Link>
+          <Link href="contributors">
+            We extend a special thank you to all our Project Ricotta
+            contributors!
+          </Link>
         </Typography>
       </div>
     </main>
