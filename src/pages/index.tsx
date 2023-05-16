@@ -67,6 +67,7 @@ export default function Home() {
         activeIndicatorIconButtonProps={{
           style: { color: theme.palette.primary.main },
         }}
+        height={475}
       >
         {welcomeSlides.map((item, i) => {
           return (
