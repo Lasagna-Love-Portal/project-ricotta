@@ -10,7 +10,6 @@ Mentors manage office hours, support our hackathons, and provide guidance to the
 
 Need more help? Join our open office hours, which are currently Friday evenings, starting March 24th, from 4-8 ET.
 
-
 ## Contributing
 
 We welcome (and appreciate) contributions from the community! Your work here results in a tangible, measurable, wholeheartedly good impact on the world: everything we do here makes it easier to connect people, neighbor by neighbor, lasagna by lasagna!
@@ -21,7 +20,7 @@ Project Ricotta is an open source project at a very early stage. We’re buildin
 
 This document is fairly extensive, and we’ll be making it easier to read as we go along.
 
-***The most important rule is that contributing must be cooperative and that the community is friendly and not nitpicking on details, such as coding style. As with all software development, people and teams make the best decisions they can at the time that they make them. If you see something that could be done better, file a ticket - we have the opportunity to improve because we built something, not in spite of the way it was built.***
+**_The most important rule is that contributing must be cooperative and that the community is friendly and not nitpicking on details, such as coding style. As with all software development, people and teams make the best decisions they can at the time that they make them. If you see something that could be done better, file a ticket - we have the opportunity to improve because we built something, not in spite of the way it was built._**
 
 ### Community Code of Conduct
 
@@ -57,6 +56,8 @@ Developers on every project come and go and Project Ricotta is no different. Whe
 If you are a contributor from outside our project, please fork the repo and send us a PR from your fork.
 
 Members of the project should create named branches, ideally namespaced to your user. For example, a Github user named Jo Doe would run `git checkout -b jodoe/my-contribution` to organize their contribution branches.
+
+To work with the backend of the project, please refer to the [Bechamel API](https://github.com/Lasagna-Love-Portal/bechamel-api) for instructions on setting up and interacting with the server-side basecode.
 
 Once you're ready, open a [pull request](https://github.com/Lasagna-Love-Portal/project-ricotta/pulls) with a clear description of your changes (you can read more about pull requests on GitHub [here](http://help.github.com/pull-requests/)).
 
