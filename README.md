@@ -11,6 +11,8 @@ Mentors manage office hours, support our hackathons, and provide guidance to the
 
 **For technical instructions on how to set up a local development environment, see [DEVELOPMENT.md](DEVELOPMENT.md)**
 
+To work with the backend of the project, please refer to the [Bechamel API](https://github.com/Lasagna-Love-Portal/bechamel-api) for instructions on setting up and interacting with the server-side basecode.
+
 Need more help? Join our open office hours, which are currently Friday evenings, starting March 24th, from 4-8 ET.
 
 ## Contributing
