@@ -1,0 +1,19 @@
+# Ignore Node.js modules and other build artifacts
+node_modules
+.next
+out
+
+# Ignore development-only files
+.DS_Store
+.env*.local
+
+# Ignore editor and IDE files
+.vscode
+.idea
+
+Dockerfile
+.gitignore
+LICENSE
+DEVELOPMENT.md
+README*.md
+docker-compose*.yml
