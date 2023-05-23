@@ -43,8 +43,11 @@ export default function Login() {
                     { setSubmitting }: FormikHelpers<Values>
                 ) => {
                     setTimeout(() => {
+                        alert("Logging in...");
                         AuthService.login(values.username, values.password);
                         setSubmitting(false);
+                        // TODO: redirect to a main page or similar
+                        // this is a placeholder to show going somewhere
                         window.location.replace("/profile");
                     }, 500);
                 }}

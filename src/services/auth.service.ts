@@ -1,25 +1,29 @@
 import axios from "axios";
 
+// TODO: un hard-code the URL string, obtain from elsewhere
 const API_URL = "http://localhost:8080/";
 
 class AuthService {
-    login(username: string, password: string) {
-        alert(username + ' ' + password);
-        axios.post(API_URL + "login", { username, password })
-        .then((response) => {
-            if (response.status == 200 && response.data['token']) {
-                alert ("Token data: " + response.data['token']);
-                localStorage.setItem("userToken", JSON.stringify(response.data['token']));
-                return response.data['token'];
+    async login(username: string, password: string) {
+        try {
+            let loginResponse = await axios.post(API_URL + "login", { username, password });
+            if (loginResponse.status == 200 && loginResponse.data['token']) {
+                if (localStorage.getItem("userToken"))
+                {
+                    localStorage.removeItem("userToken");
+                }
+                localStorage.setItem("userToken", loginResponse.data['token']);
+                alert("Set userToken to: " + loginResponse.data['token']);
+                return loginResponse.data['token'];
             }
             else {
-                alert("Returned status: " + response.status + "\n" +
-                    "Returned data: " + JSON.stringify(response.data));
+                alert("Returned status: " + loginResponse.status + "\n" +
+                    "Returned data: " + JSON.stringify(loginResponse.data));
             }
-        }, (error) => {
+        } catch (error) {
             console.error(error);
             alert("Error: " + error);
-        });
+        }
     }
 
     logout() {
