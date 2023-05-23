@@ -13,7 +13,6 @@ class AuthService {
                     localStorage.removeItem("userToken");
                 }
                 localStorage.setItem("userToken", loginResponse.data['token']);
-                alert("Set userToken to: " + loginResponse.data['token']);
                 return loginResponse.data['token'];
             }
             else {
