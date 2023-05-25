@@ -15,6 +15,10 @@ class AuthService {
                 localStorage.setItem("userToken", loginResponse.data['token']);
                 return loginResponse.data['token'];
             }
+            else if (loginResponse.status == 401) { // unauthorized
+                console.error("Invalid username and password supplied.");
+                alert("Invalid username and password supplied.");
+            }
             else {
                 alert("Returned status: " + loginResponse.status + "\n" +
                     "Returned data: " + JSON.stringify(loginResponse.data));
@@ -27,10 +31,7 @@ class AuthService {
 
     logout() {
         localStorage.removeItem("userToken");
-    }
-
-    getCurrentUser() {
-        return localStorage.getItem("userToken");
+        alert("You have successfully logged out.")
     }
 }
 
