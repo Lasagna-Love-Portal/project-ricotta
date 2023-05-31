@@ -1,11 +1,11 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import React from "react";
+import { Button } from '@mui/material'
 import { useTheme } from "@mui/material/styles";
 import Carousel from "react-material-ui-carousel";
 import { Paper, Card, Typography, Link } from "@mui/material";
 import styles from "@/styles/Welcome.module.css";
-import ReusableButton from "../components/ReusableButton";
 const inter = Inter({ subsets: ["latin"] });
 
 const welcomeSlides = [
@@ -89,14 +89,12 @@ export default function Home() {
       </Carousel>
 
       <div className={styles["create-acct-wrapper"]}>
-        <ReusableButton
-          buttonVariant="contained"
-          buttonColor="primary"
-          buttonText="Create Account"
-        />
+        <Button variant="contained" color="primary">
+            Create Account
+        </Button>
         <Typography variant="body1">
           Already have an account?{" "}
-          <Link href="#" variant="button">
+          <Link href="login" variant="button">
             Log In
           </Link>
         </Typography>
