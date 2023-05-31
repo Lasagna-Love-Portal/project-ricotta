@@ -1,6 +1,6 @@
 export default function authHeader() {
-    const userToken = localStorage.getItem("userToken");
-    if (userToken) {
+    let userToken = localStorage.getItem("bechamel_access_token");
+    if (localStorage.getItem("bechamel_access_token")) {
         return { Authorization: 'Bearer ' + userToken };
     } else {
         return { Authorization: '' };
