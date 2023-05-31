@@ -17,7 +17,7 @@ class UserService {
                 if (axiosErr.response?.status == 401) {
                     let refreshToken = localStorage.getItem("bechamel_refresh_token");
                     if (refreshToken) {
-                        console.log("HTTP 401 returned from GET /profile, attempting to re-login with refresh token.");
+                        console.info("HTTP 401 returned from GET /profile, attempting to re-login with refresh token.");
                         await AuthService.refresh(refreshToken);
                         // Need to handle error, ideal would be to call recursively... but having issues
                         let retryResponse = await axios.get(API_URL + 'profile', { headers: authHeader() });
