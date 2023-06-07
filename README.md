@@ -86,7 +86,7 @@ We encourage feedback and suggestions on pull requests to help make Project Rico
 
 We encourage practicality over perfection. We expect our projects will iterate towards better over time and especially encourage contributions that advance Project Ricotta along the journey to being better.
 
-We encourage making issues in Github for suggestions and ideas.
+We encourage making issues in GitHub for suggestions and ideas.
 
 We encourage pull request reviewers to merge pull requests when they give approvals and they're able. Contributors who've opened pull requests and see an approval are able to merge and close their own pull requests but we prefer reviewer to merge and close wherever possible.
 
