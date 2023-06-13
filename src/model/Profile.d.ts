@@ -26,6 +26,6 @@ export interface Profile {
     paused: boolean,
     paused_end_date: string,
     attestations: Attestations,
-    //	RecipientInfo           *LasagnaLoveRecipientInfo `json:"recipient_info,omitempty"`
-    //	VolunteerInfo           *LasagnaLoveVolunteerInfo `json:"volunteer_info,omitempty"`
+    recipient_info: RecipientInfo,
+    volunteer_info: VolunteerInfo
 }
