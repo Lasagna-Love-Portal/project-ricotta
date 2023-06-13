@@ -1,7 +1,15 @@
 import axios, { AxiosResponse } from "axios";
+import jwt_decode from "jwt-decode";
 
 // TODO: un hard-code the URL string, obtain from elsewhere
 const API_URL = "http://localhost:8080/";
+
+interface BechamelAccessToken {
+    exp: number,
+    iat: number,
+    nbf: number,
+    userName: string
+}
 
 class AuthService {
     private storeTokens(loginResponse : AxiosResponse) {
@@ -55,10 +63,26 @@ class AuthService {
         }
     }
 
+    getCurrentUsername() {
+        var accessToken = localStorage.getItem("bechamel_access_token");
+        if (accessToken === "")
+            return "";
+        try {
+            var decodedToken = accessToken ?
+                jwt_decode<BechamelAccessToken>(accessToken) :
+                <BechamelAccessToken>{ userName: "" };
+            return decodedToken.userName
+        } catch (error) {
+            console.error(error);
+            alert("getCurrentUsername ERROR: " + error);
+            return "";
+        }
+    }
+
     logout() {
         localStorage.removeItem("bechamel_access_token");
         localStorage.removeItem("bechamel_refresh_token");
-        alert("You have successfully logged out.")
+        return true;
     }
 }
 

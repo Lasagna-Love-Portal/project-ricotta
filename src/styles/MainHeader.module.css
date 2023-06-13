@@ -1,0 +1,16 @@
+/* ----- Main header for logged-in users ----- */
+.main-header {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+    padding-bottom: 25px;
+    background-color: #fffaf7;
+    padding: 25px 20 25px;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+}

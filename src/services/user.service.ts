@@ -1,16 +1,20 @@
 import axios, { AxiosError, AxiosResponse } from 'axios';
 import AuthService from './auth.service';
 import authHeader from './auth-header';
-import { ref } from 'yup';
+import { Attestations } from '@/model/Attestations';
+import { VolunteerInfo } from '@/model/VolunteerInfo';
+import { RecipientInfo } from '@/model/RecipientInfo';
+import { Profile } from '@/model/Profile';
 
 // TODO: un hard-code the URL string, obtain from elsewhere
 const API_URL = 'http://localhost:8080/';
 
 class UserService {
-    async getCurrentUserProfile() {
+    async getCurrentUserProfile() : Promise<Profile> {
         try {
             let response = await axios.get(API_URL + 'profile', { headers: authHeader() });
-            return response.data;
+            let userProfile : Profile = response.data;
+            return userProfile;
         } catch (error) {
             if (axios.isAxiosError(error)) {
                 const axiosErr = error as AxiosError;
@@ -21,7 +25,8 @@ class UserService {
                         await AuthService.refresh(refreshToken);
                         // Need to handle error, ideal would be to call recursively... but having issues
                         let retryResponse = await axios.get(API_URL + 'profile', { headers: authHeader() });
-                        return retryResponse.data;
+                        let userProfile : Profile = retryResponse.data;
+                        return userProfile;
                     }
                 } else {
                     console.error(error);
@@ -31,6 +36,7 @@ class UserService {
                 console.error(error);
                 alert("Error: " + error);
             }
+            return new Promise<Profile>(resolve => { });
         }
     }
 }
