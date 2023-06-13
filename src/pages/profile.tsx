@@ -17,6 +17,38 @@ const MainHeader = dynamic(() => import("@/components/main_header"), {
   ssr: false,
 });
 
+function showRecipientInfo (recipientInfo: RecipientInfo) {
+    return (
+        <div>
+            <Typography variant="h2">
+                Recipient information:
+            </Typography>
+            <Typography>
+            Number of adults in household: {recipientInfo.adult_count} <br />
+            Number of children in household: {recipientInfo.child_count} <br />
+            Learned about Lasagna Love from: {recipientInfo.learned_about_from} <br />
+            </Typography>
+        </div>
+    )
+}
+
+function showVolunteerInfo (volunteerInfo : VolunteerInfo) {
+    return (
+        <div>
+            <Typography variant="h2">
+                Volunteer information:
+            </Typography>
+            <Typography>
+            Facebook profile name: {volunteerInfo.facebook_name} <br />
+            Birthday: {volunteerInfo.birthday} <br />
+            Gender identity: {volunteerInfo.gender_identity} <br />
+            Maximum distance willing to travel to deliver: {volunteerInfo.max_travel_distance} <br />
+            Maximum families per delivery: {volunteerInfo.families_per_delivery} <br />
+            </Typography>
+        </div>
+    )
+}
+
 export default function Profile() {
     const [userProfile, setUserProfile] = React.useState<Profile | undefined>(undefined);
     const [isLoading, setLoading] = React.useState(false);
@@ -69,6 +101,8 @@ export default function Profile() {
                     <Typography>
                         User is eighteen or older: {userProfile?.attestations.user_is_eighteen ? "true" : "false"} <br />
                     </Typography>
+                    { userProfile?.volunteer_info ? showVolunteerInfo(userProfile.volunteer_info) : "" }
+                    { userProfile?.recipient_info ? showRecipientInfo(userProfile.recipient_info) : "" }
                 </CardContent>
             </Card>
         </main>
