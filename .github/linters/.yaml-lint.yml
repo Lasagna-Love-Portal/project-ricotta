@@ -2,8 +2,7 @@
 extends: default
 
 rules:
-  document-start:
-    present: false
+  document-start: disable
   new-lines: disable
   line-length:
     max: 120

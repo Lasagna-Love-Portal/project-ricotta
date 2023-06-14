@@ -6,7 +6,7 @@
 # https://github.com/github/super-linter
 name: Lint Code Base
 
-on:
+on: # yamllint disable-line rule:truthy
   push:
     branches: ["dev", "main", "mattkuznicki-ll/linter-issue-fixups"]
   pull_request:
