@@ -13,13 +13,6 @@ interface Values {
     password: string;
 }
 
-type State = {
-    username: string,
-    password: string,
-    loading: boolean,
-    message: string
-  };
-
 export default function Login() {
     const theme = useTheme();
     return (
@@ -38,17 +31,13 @@ export default function Login() {
                     username: '',
                     password: ''
                 }}
-                onSubmit={(
+                onSubmit={ async (
                     values: Values,
                     { setSubmitting }: FormikHelpers<Values>
                 ) => {
-                    setTimeout(() => {
-                        AuthService.login(values.username, values.password);
-                        setSubmitting(false);
-                        // TODO: redirect to a main page or similar
-                        // this is a placeholder to show going somewhere
-                        window.location.replace("/profile");
-                    }, 500);
+                    await AuthService.login(values.username, values.password);
+                    // TODO: better handle login errors
+                    window.location.replace("/landing");
                 }}
             >
                 <Form>

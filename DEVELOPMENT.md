@@ -79,6 +79,8 @@ Where [path-to-project] is the full path to your project.
 ## Architecture
 
 Software Stack:
-- react
 - next.js
-- docker
+- React
+- TypeScript
+- JavaScript
+- Docker
