@@ -70,11 +70,31 @@ against your changes before making a pull request to dev or main.
 You can run this locally using Docker:
 
 1. Obtain the Super Linter Docker container:
-    `docker pull github/super-linter:latest`
-2. Invoke Docker to run the Super Linter against your project directory:
-    `docker run -e RUN_LOCAL=true -v [path-to-project]:/tmp/lint github/super-linter`
 
-Where [path-to-project] is the full path to your project.
+    `docker pull github/super-linter:latest`
+
+2. Invoke Docker to run the Super Linter against your project directory:
+
+    `docker run -e RUN_LOCAL=true -e FILTER_REGEX_EXCLUDE=.*reference_materials/.*
+    -v [path-to-project]:/tmp/lint github/super-linter`
+
+Where [path-to-project] is the path to your project. This can be a full or relative path. You can exclude the 'reference_materials' folder since items in there are not considered source or project code.
+
+For example, if you're currently in the top level project-ricotta directory you can run the linter with:
+
+    `docker run -e RUN_LOCAL=true -e FILTER_REGEX_EXCLUDE=.*reference_materials/.* -v .:/tmp/lint github/super-linter`
+
+To narrow the files to lint, pass the file(s) to run as a regular expression
+in the environment variable FILTER_REGEX_INCLUDE. Or to exclude file(s) pass an appropriate
+regular expression in the FILTER_REGEX_EXCLUDE environment variable.
+
+For example, to only lint the file DEVELOPMENT.md in the top level directory:
+
+   `docker run -e RUN_LOCAL=true -e FILTER_REGEX_INCLUDE=DEVELOPMENT.md -v .:/tmp/lint github/super-linter`
+
+Use UNIX-style paths with forward-slash \/ characters as path separators.
+See the [super-linter GitHub repository](https://github.com/github/super-linter/blob/main/README.md#filter-linted-files)
+for more information on how to specify files for super-linter runs.
 
 ## Architecture
 

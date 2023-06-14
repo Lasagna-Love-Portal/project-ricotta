@@ -3,4 +3,9 @@ extends: default
 
 rules:
   document-start:
-    present: true
+    present: false
+  new-lines: disable
+  line-length:
+    max: 120
+    level: warning
+  comments-indentation: disable
