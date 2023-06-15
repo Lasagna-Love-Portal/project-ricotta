@@ -6,9 +6,9 @@
 # https://github.com/github/super-linter
 name: Lint Code Base
 
-on:
+on:  # yamllint disable-line rule:truthy
   push:
-    branches: ["dev", "main", "mattkuznicki-ll/add-main-landing-area"]
+    branches: ["dev", "main"]
   pull_request:
     branches: ["dev", "main"]
 jobs:
@@ -29,3 +29,9 @@ jobs:
           DEFAULT_BRANCH: "dev"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           FILTER_REGEX_EXCLUDE: .*reference_materials/.*
+          # Currently the ts-standard linter cannot be coaxed to play nice
+          # with the tsconfig.json file - the ESLint config and tsconfig configs don't agree
+          # on the files to process.
+          # It breaks my heart to turn this off for the time being...
+          # See https://github.com/Lasagna-Love-Portal/project-ricotta/issues/42
+          VALIDATE_TYPESCRIPT_STANDARD: false
