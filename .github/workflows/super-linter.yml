@@ -6,9 +6,9 @@
 # https://github.com/github/super-linter
 name: Lint Code Base
 
-on: # yamllint disable-line rule:truthy
+on:  # yamllint disable-line rule:truthy
   push:
-    branches: ["dev", "main", "mattkuznicki-ll/linter-issue-fixups"]
+    branches: ["dev", "main"]
   pull_request:
     branches: ["dev", "main"]
 jobs:
