@@ -14,8 +14,8 @@ Principles that guide the architecture include:
 ## Diagrams
 
 ```mermaid
-A[Production Traffic] --> C{Azure}
-B[Staging Traffic] --> C{Azure}
+A[Production Traffic] --> C[Azure]
+B[Staging Traffic] --> C[Azure]
 C -->|Production Traffic| D[Production Subscription]
 C -->|Staging Traffic| E[Staging Subscription]
 D --> F[Production Resource Group]
