@@ -129,9 +129,8 @@ export default function Profile() {
                     </Typography>
                     <Typography>
                         User ID: {userProfile?.id}<br />
-                        Username: {userProfile?.username}<br />
-                        Password: (hidden) <br />
                         Email address: {userProfile?.email}<br />
+                        Password: (hidden) <br />
                         User roles: {userProfile?.roles ? userProfile.roles.toString() : ""}<br />
                         <br />
                         First name: {userProfile?.given_name}<br />
@@ -149,7 +148,7 @@ export default function Profile() {
                         City: {userProfile?.city}<br />
                         State / Province: {userProfile?.state_or_province}<br />
                         Postal code: {userProfile?.postal_code}<br />
-                        Country: (Not yet supported)<br />
+                        Country: {userProfile?.country}<br />
                         <br />
                         Profile created on: {userProfile?.creation_time}<br />
                         Profile last updated: {userProfile?.last_update_time}<br />
