@@ -2,13 +2,13 @@ import axios, { AxiosResponse } from "axios";
 import jwt_decode from "jwt-decode";
 
 // TODO: un hard-code the URL string, obtain from elsewhere
-const API_URL = "http://localhost:8080/";
+const API_URL = "http://localhost:8080/dev/";
 
 interface BechamelAccessToken {
     exp: number,
     iat: number,
     nbf: number,
-    userName: string
+    email: string
 }
 
 class AuthService {
@@ -33,15 +33,15 @@ class AuthService {
         return false;
     }
 
-    async login(username: string, password: string) : Promise<string> {
+    async login(email: string, password: string) : Promise<string> {
         try {
-            let loginResponse = await axios.post(API_URL + "login", { username, password });
+            let loginResponse = await axios.post(API_URL + "login", { email, password });
             if (this.storeTokenIfGood(loginResponse)) {
                 return loginResponse.data['access_token'];
             }
             else if (loginResponse.status == 401) { // unauthorized
-                console.error("Invalid username and password supplied.");
-                alert("Invalid username and password supplied.");
+                console.error("Invalid email and password supplied.");
+                alert("Invalid email and password supplied.");
             }
         } catch (error) {
             console.error(error);
@@ -67,15 +67,15 @@ class AuthService {
         return "";
     }
 
-    getCurrentUsername() : string {
+    getCurrentUserEmail() : string {
         var accessToken = localStorage.getItem("bechamel_access_token");
         if (accessToken === "")
             return "";
         try {
             var decodedToken = accessToken ?
                 jwt_decode<BechamelAccessToken>(accessToken) :
-                <BechamelAccessToken>{ userName: "" };
-            return decodedToken.userName
+                <BechamelAccessToken>{ email: "" };
+            return decodedToken.email
         } catch (error) {
             console.error(error);
             alert("getCurrentUsername ERROR: " + error);

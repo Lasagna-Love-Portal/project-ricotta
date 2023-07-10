@@ -17,10 +17,10 @@ export default function MainHeader () {
     setAnchorEl(null);
   };
 
-// Need to verify we have a JWT with a username, immediately go back to login page if we don't.
+// Need to verify we have a JWT with the user's email address, immediately go back to login page if we don't.
 // This is faster than verifying an active login since it doesn't hit the API at all
-  const username = AuthService.getCurrentUsername();
-  if (username === "") {
+  const userEmail = AuthService.getCurrentUserEmail();
+  if (userEmail === "") {
     alert("You do not appear to be logged in.\n Redirecting to login page.");
     window.location.replace("/login");
   }
@@ -43,7 +43,7 @@ export default function MainHeader () {
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
       >
-        {username}
+        {userEmail}
       </Button>
       <Menu
         id="basic-menu"

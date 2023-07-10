@@ -9,7 +9,7 @@ import AuthService from "@/services/auth.service";
 const inter = Inter({ subsets: ["latin"] });
 
 interface Values {
-    username: string;
+    email: string;
     password: string;
 }
 
@@ -28,22 +28,22 @@ export default function Login() {
             </header>
             <Formik
                 initialValues={{
-                    username: '',
+                    email: '',
                     password: ''
                 }}
                 onSubmit={ async (
                     values: Values,
                     { setSubmitting }: FormikHelpers<Values>
                 ) => {
-                    await AuthService.login(values.username, values.password);
+                    await AuthService.login(values.email, values.password);
                     // TODO: better handle login errors
                     window.location.replace("/landing");
                 }}
             >
                 <Form>
                     <div>
-                        <label htmlFor="username">Username</label>
-                        <Field id="username" name="username" />
+                        <label htmlFor="email">Email address</label>
+                        <Field id="email" name="email" />
                     </div>
                     <div>
                         <label htmlFor="password">Password</label>
