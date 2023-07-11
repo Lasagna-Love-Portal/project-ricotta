@@ -8,7 +8,7 @@ FROM node:19-alpine AS base
 # Install dependencies, configure user and group
 RUN apk add --no-cache libc6-compat \
   && addgroup -g 1001 -S nodejs \
-  && adduser -S nextjs -u 1001 \
+  && adduser -S nextjs -u 1001
 USER nextjs
 # shared workspace
 WORKDIR /app
