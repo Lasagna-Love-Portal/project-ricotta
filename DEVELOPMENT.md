@@ -53,6 +53,7 @@ You can use Visual Studio Code or other tools to debug when developing locally w
 ### Execute commands inside the container
 
 If you need to execute a command inside the application's environment (such as for debugging):
+
 1. Start the app (see above).
 2. `docker compose exec frontend /bin/sh` at the root of the repository.
 
@@ -72,16 +73,16 @@ and your own:
 
 1. Obtain the Super Linter Docker container:
 
-    `docker pull github/super-linter:latest`
+`docker pull github/super-linter:latest`
 
 2. Invoke Docker to run the Super Linter against your project directory with the included environment variables:
 
-    `docker run --env-file super-linter.env -v [path-to-project]:/tmp/lint github/super-linter`
+`docker run --env-file super-linter.env -v [path-to-project]:/tmp/lint github/super-linter`
 
-Where [path-to-project] is the path to your project. This can be a full or relative path.
+Where `[path-to-project]` is the path to your project. This can be a full or relative path.
 For example, if you're currently in the top level project-ricotta directory you can run the linter with:
 
-    `docker run --env-file super-linter.env -v .:/tmp/lint github/super-linter`
+`docker run --env-file super-linter.env -e FILTER_REGEX_INCLUDE=DEVELOPMENT.md -v .:/tmp/lint github/super-linter`
 
 To narrow the files to lint, pass the file(s) to run as a regular expression in the environment variable
 `FILTER_REGEX_INCLUDE`. To exclude file(s) pass an appropriate addition to the
@@ -90,7 +91,7 @@ or supply the regular expression for the files you wish to include on the comman
 
 For example, to only lint the file DEVELOPMENT.md in the top level directory:
 
-   `docker run --env-file super-linter.env -e FILTER_REGEX_INCLUDE=DEVELOPMENT.md -v .:/tmp/lint github/super-linter`
+`docker run --env-file super-linter.env -e FILTER_REGEX_INCLUDE=DEVELOPMENT.md -v .:/tmp/lint github/super-linter`
 
 Use UNIX-style paths with forward-slash \/ characters as path separators.
 See the [super-linter GitHub repository](https://github.com/github/super-linter/blob/main/README.md#filter-linted-files)
@@ -99,6 +100,7 @@ for more information on how to specify files for super-linter runs.
 ## Architecture
 
 Software Stack:
+
 - next.js
 - React
 - TypeScript
