@@ -1,63 +1,57 @@
-name: Deployments
+# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
+# More GitHub Actions for Azure: https://github.com/Azure/actions
 
-# For override below, see https://github.com/adrienverge/yamllint/issues/430
+name: Build and deploy Node.js app to Azure Web App - projectricotta
+
+     # For override below, see https://github.com/adrienverge/yamllint/issues/430
 on:  # yamllint disable-line rule:truthy
   push:
     branches:
-      - dev
       - main
+  workflow_dispatch:
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+      - name: Set up Node.js version
+        uses: actions/setup-node@v1
         with:
           node-version: '18.x'
 
-      - name: Install dependencies
-        run: npm install
+      - name: npm install, build, and test
+        run: |
+          npm install
+          npm run build --if-present
+          npm run test --if-present
 
-      - name: Build the app
-        run: npm run build
-
-      - name: Deploy to Azure App Service
-        uses: azure/webapps-deploy@v2
+      - name: Upload artifact for deployment job
+        uses: actions/upload-artifact@v2
         with:
-          app-name: project-ricotta
-          slot-name: development
-          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          package: .
+          name: node-app
+          path: .
 
-  build-and-deploy-to-production:
+  deploy:
     runs-on: ubuntu-latest
-    needs: build-and-deploy
-    if: github.ref == 'refs/heads/main'
+    needs: build
+    environment:
+      name: 'production'
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+      - name: Download artifact from build job
+        uses: actions/download-artifact@v2
         with:
-          node-version: '18.x'
+          name: node-app
 
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build the app
-        run: npm run build
-
-      - name: Deploy to Azure App Service
+      - name: 'Deploy to Azure Web App'
+        id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: project-ricotta
-          slot-name: production
-          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          app-name: 'projectricotta'
+          slot-name: 'production'
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile_1234 }}
           package: .
