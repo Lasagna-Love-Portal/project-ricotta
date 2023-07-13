@@ -1,26 +1,35 @@
----
-version: "3"
+version: '3'
 
 services:
-  server-api:
-    #image: 
+  frontend:
     build:
-      context: ./packages/server-api
-      dockerfile: Dockerfile
-    environment:
-      - NODE_ENV=development
+      context: .
+      target: dev
+    # File watching https://docs.docker.com/compose/file-watch/
+    x-develop:
+      watch:
+        - path: ./src
+          target: /app/src
+          action: sync
+        - path: ./public
+          target: /app/public
+          action: sync
+        - path: package.json
+          action: rebuild
     ports:
-      - 8001:8001
-    command: npm run start
-
-  web-client:
-    build:
-      context: ./packages/web-client
-      dockerfile: Dockerfile
-    environment:
-      - NODE_ENV=development
-    ports:
-      - "3000:3000"
-    depends_on:
-      - server-api
-    command: npm run start
+      - '3000:3000'
+  # frontend-prod:
+  #   build:
+  #     context: .
+  #     target: prod
+  #   x-develop:
+  #     watch:
+  #       - path: ./src
+  #         action: rebuild
+  #       - path: ./public
+  #         action: rebuild
+  #       - path: package.json
+  #         action: rebuild
+  #   ports:
+  #     - '8080:8080'
+  #     - "80:80"

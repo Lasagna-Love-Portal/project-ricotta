@@ -1,16 +1,16 @@
-# This workflow executes several linters on changed files based on languages used in your code base whenever
-# you push a code or open a pull request.
+# This workflow executes several linters on changed files based on languages
+# used in your code base whenever you push a code or open a pull request.
 #
 # You can adjust the behavior by modifying this file.
 # For more information, see:
 # https://github.com/github/super-linter
 name: Lint Code Base
 
-on:
+on:  # yamllint disable-line rule:truthy
   push:
-    branches: [ "dev" ]
+    branches: ["dev", "main"]
   pull_request:
-    branches: [ "dev" ]
+    branches: ["dev", "main"]
 jobs:
   run-lint:
     runs-on: ubuntu-latest
@@ -18,12 +18,20 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          # Full git history is needed to get a proper list of changed files within `super-linter`
+          # Full git history is needed to get a proper list of changed files
+          # within `super-linter`
           fetch-depth: 0
 
       - name: Lint Code Base
-        uses: github/super-linter@v4
+        uses: super-linter/super-linter/slim@v5
         env:
           VALIDATE_ALL_CODEBASE: false
           DEFAULT_BRANCH: "dev"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FILTER_REGEX_EXCLUDE: .*reference_materials/.*
+          # Currently the ts-standard linter cannot be coaxed to play nice
+          # with the tsconfig.json file - the ESLint config and tsconfig configs don't agree
+          # on the files to process.
+          # It breaks my heart to turn this off for the time being...
+          # See https://github.com/Lasagna-Love-Portal/project-ricotta/issues/42
+          VALIDATE_TYPESCRIPT_STANDARD: false

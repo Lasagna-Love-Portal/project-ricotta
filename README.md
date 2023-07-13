@@ -9,6 +9,10 @@ You can join Project Ricotta as a developer, product manager, or ops engineer. W
 
 Mentors manage office hours, support our hackathons, and provide guidance to the project and its members. Maintainers lead the development of a specific component of the Project Ricotta experience, and make the final call on architecture and performance. Contributors are the backbone of Project Ricotta, and pick up and work on the tickets required to build and operate Project Ricotta.
 
+**For technical instructions on how to set up a local development environment, see [DEVELOPMENT.md](DEVELOPMENT.md)**
+
+To work with the backend of the project, please refer to the [Bechamel API](https://github.com/Lasagna-Love-Portal/bechamel-api) for instructions on setting up and interacting with the server-side basecode.
+
 Need more help? Join our open office hours, which are currently Friday evenings, starting March 24th, from 4-8 ET.
 
 ## Contributing
@@ -75,6 +79,16 @@ When you send a pull request, please be sure to include:
 - Unit tests that validate that your changes work as expected.
 - Use concise code comments (it can help to imagine that you are explaining your code to a total stranger).
 - Examples, if necessary.
+
+### Reviewing Contributions
+
+We encourage feedback and suggestions on pull requests to help make Project Ricotta the best it can be for our participants and volunteers.
+
+We encourage practicality over perfection. We expect our projects will iterate towards better over time and especially encourage contributions that advance Project Ricotta along the journey to being better.
+
+We encourage making issues in GitHub for suggestions and ideas.
+
+We encourage pull request reviewers to merge pull requests when they give approvals and they're able. Contributors who've opened pull requests and see an approval are able to merge and close their own pull requests but we prefer reviewer to merge and close wherever possible.
 
 ## Project Background
 
