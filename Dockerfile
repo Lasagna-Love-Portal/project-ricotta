@@ -2,12 +2,13 @@
 
 # Shared root image
 FROM node:19-alpine AS base
+
 # To see why we need libc6-compat:
 # https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine
-RUN apk add --no-cache libc6-compat
-# Configure user/group
-RUN addgroup -g 1001 -S nodejs
-RUN adduser -S nextjs -u 1001
+# Install dependencies, configure user and group
+RUN apk add --no-cache libc6-compat \
+  && addgroup -g 1001 -S nodejs \
+  && adduser -S nextjs -u 1001
 USER nextjs
 # shared workspace
 WORKDIR /app
