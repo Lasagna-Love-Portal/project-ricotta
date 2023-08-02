@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from 'next/link'
 import { Inter } from "next/font/google";
 import React, { useState } from "react";
 import { Dialog } from '@headlessui/react'
@@ -8,10 +9,10 @@ import AuthService from "@/services/auth.service";
 const inter = Inter({ subsets: ["latin"] });
 
 const navigation = [
-  { name: 'Home', href: '#' },
-  { name: 'Matches', href: '#' },
-  { name: 'Resources', href: '#' },
-  { name: 'Account', href: '#' },
+  { name: 'Home', href: '/portal/dashboard' },
+  { name: 'Matches', href: '/portal/matches' },
+  { name: 'Resources', href: '/portal/resources' },
+  { name: 'Account', href: '/portal/account' },
 ]
 
 export default function MainHeader () {
@@ -41,7 +42,7 @@ export default function MainHeader () {
         <a href="#" className="-m-1.5 p-1.5">
           <span className="sr-only">Lasagna Love</span>
           <Image
-                src={"logo-vrt1.png"}
+                src={"/logo-vrt1.png"}
                 alt="Lasagna Love logo"
                 width={90}
                 height={79}
@@ -60,13 +61,8 @@ export default function MainHeader () {
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
           {navigation.map((item) => (
-            <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-gray-900">
-              {item.name}
-            </a>
+            <Link href={item.href} className="text-sm font-semibold leading-6 text-gray-900">{item.name}</Link>
           ))}
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-            Log in <span aria-hidden="true">&rarr;</span>
-          </a>
         </div>
       </nav>
       <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
@@ -96,22 +92,8 @@ export default function MainHeader () {
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
                 {navigation.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  >
-                    {item.name}
-                  </a>
+                  <Link href={item.href} className="text-sm font-semibold leading-6 text-gray-900">{item.name}</Link>
                 ))}
-              </div>
-              <div className="py-6">
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Log in
-                </a>
               </div>
             </div>
           </div>
