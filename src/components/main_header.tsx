@@ -72,7 +72,7 @@ export default function MainHeader () {
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Lasagna Love</span>
               <Image
-                src={"logo-vrt1.png"}
+                src={"/logo-vrt1.png"}
                 alt="Lasagna Love logo"
                 width={90}
                 height={79}
@@ -101,42 +101,4 @@ export default function MainHeader () {
       </Dialog>
     </header>
   )
-
-
-  // return (
-  //   <Box className={styles["main-header"]}>
-  //     <Image
-  //       src={"logo-vrt1.png"}
-  //       alt="Lasagna Love logo"
-  //       width={90}
-  //       height={79}
-  //       className="logo"
-  //     />
-  //     <Button
-  //       id="basic-button"
-  //       aria-controls={open ? 'basic-menu' : undefined}
-  //       aria-haspopup="true"
-  //       aria-expanded={open ? 'true' : undefined}
-  //       onClick={handleClick}
-  //     >
-  //       {userEmail}
-  //     </Button>
-  //     <Menu
-  //       id="basic-menu"
-  //       anchorEl={anchorEl}
-  //       open={open}
-  //       onClose={handleClose}
-  //       MenuListProps={{
-  //         'aria-labelledby': 'basic-button',
-  //       }}
-  //     >
-  //       <MenuItem onClick={handleClose}>
-  //         <Link href="/profile">Profile</Link>
-  //       </MenuItem>
-  //       <MenuItem onClick={handleClose}>
-  //         <Link href="/logout">Logout</Link>
-  //       </MenuItem>
-  //     </Menu>
-  //   </Box>
-  // );
 }
