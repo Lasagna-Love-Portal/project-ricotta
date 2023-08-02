@@ -6,6 +6,7 @@ import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import styles from "@/styles/MainHeader.module.css";
 import AuthService from "@/services/auth.service";
+import HeaderLogo from "./main_header_logo";
 const inter = Inter({ subsets: ["latin"] });
 
 const navigation = [
@@ -39,16 +40,7 @@ export default function MainHeader () {
   return (
     <header className="bg-[#fffaf7]">
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
-        <a href="#" className="-m-1.5 p-1.5">
-          <span className="sr-only">Lasagna Love</span>
-          <Image
-                src={"/logo-vrt1.png"}
-                alt="Lasagna Love logo"
-                width={90}
-                height={79}
-                className="logo"
-              />
-        </a>
+        <HeaderLogo />
         <div className="flex lg:hidden">
           <button
             type="button"
@@ -65,20 +57,12 @@ export default function MainHeader () {
           ))}
         </div>
       </nav>
+
       <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
         <div className="fixed inset-0 z-10" />
         <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Lasagna Love</span>
-              <Image
-                src={"/logo-vrt1.png"}
-                alt="Lasagna Love logo"
-                width={90}
-                height={79}
-                className="logo"
-              />
-            </a>
+            <HeaderLogo />
             <button
               type="button"
               className="-m-2.5 rounded-md p-2.5 text-gray-700"
