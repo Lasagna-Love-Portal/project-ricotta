@@ -7,8 +7,6 @@
 name: Lint Code Base
 
 on:  # yamllint disable-line rule:truthy
-  push:
-    branches: ["dev", "main"]
   pull_request:
     branches: ["dev", "main"]
 jobs:
