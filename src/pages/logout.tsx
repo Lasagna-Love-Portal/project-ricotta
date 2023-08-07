@@ -4,6 +4,7 @@ import React from "react";
 import { useTheme } from "@mui/material/styles";
 import styles from "@/styles/Welcome.module.css";
 import AuthService from "@/services/auth.service";
+import  { Redirect } from 'react-router-dom';
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Profile() {
@@ -16,7 +17,8 @@ export default function Profile() {
         }
     }, []);
     if (didLogout) {
-        statusString = "Logged out";        
+        statusString = "Logged out"; 
+        window.location.replace("/login");
     } else {
         statusString = "Error logging out";
     }
