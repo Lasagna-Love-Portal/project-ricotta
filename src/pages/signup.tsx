@@ -38,12 +38,12 @@ interface TextInputProps {
   type?: string;
   placeholder: string;
   rows?: number;
+  className: string;
 }
 
 interface RadioProps {
   label: string;
   name: string;
-  defaultChecked: boolean;
   children: React.ReactNode;
   value: 'yes' | 'no';
 }
@@ -63,27 +63,12 @@ const TextInput: React.FC<TextInputProps> = ({ label, name, ...props }) => {
   );
 };
 
-// const MyCheckbox: React.FC<CheckboxProps> = ({ children, ...props }) => {
-//   const [field, meta] = useField({ ...props, type: "checkbox" });
-//   return (
-//     <>
-//       <label className="checkbox">
-//         <input {...field} {...props} type="checkbox" />
-//         {children}
-//       </label>
-//       {meta.touched && meta.error ? (
-//         <div className="error">{meta.error}</div>
-//       ) : null}
-//     </>
-//   );
-// };
-
-const MyRadio: React.FC<RadioProps> = ({ children, value, ...props }) => {
-  const [field, meta] = useField({ ...props, type: "radio" });
+const MyRadio: React.FC<RadioProps> = ({ children, name, value, ...props }) => {
+  const [field, meta] = useField({ name, value, type: "radio" });
   return (
     <>
       <label className="checkbox">
-        <input {...field} {...props} type="radio" value={value} />
+        <input {...field} {...props} type="radio" />
         {children}
       </label>
       {meta.touched && meta.error ? (
@@ -100,11 +85,10 @@ const MyTextArea: React.FC<TextInputProps> = ({label, ...props}) => {
   const [field, meta] = useField(props);
   return (
       <>
-          {/* <label htmlFor={props.id || props.name}>{label}</label> */}
-          <textarea className="text-area" {...field} {...props} />
-          {meta.touched && meta.error ? (
-              <div className="error">{meta.error}</div>
-          ) : null}
+        <textarea className="text-area" {...field} {...props} />
+        {meta.touched && meta.error ? (
+          <div className="error">{meta.error}</div>
+        ) : null}
       </>
   );
 };
@@ -113,6 +97,7 @@ interface SelectProps {
   label: string;
   name: string;
   children: React.ReactNode;
+  className: string;
 }
 
 const Select: React.FC<SelectProps> = ({ label, name, children, ...props }) => {
@@ -131,6 +116,31 @@ const Select: React.FC<SelectProps> = ({ label, name, children, ...props }) => {
   );
 };
 
+const CountrySelect: React.FC<SelectProps> = ({ label, name, children, ...props }) => {
+  const [field, meta] = useField(name);
+  const { setFieldValue } = useFormikContext();
+
+  const onChange = (e: React.ChangeEvent<HTMLSelectElement>)  => {
+    const {value} = e.target;
+    const newletter = value === "United States" || value === "Canada" ? 'yes' : 'no';
+    setFieldValue('newsletter', newletter);
+    field.onChange(e);
+  }
+
+  return (
+    <>
+      <label htmlFor={name}>{label}</label>
+      <select {...field} {...props} onChange={onChange}>{children}</select>
+      {meta.touched && meta.error ? (
+        <div>{meta.error}</div>
+      ) : null}
+    </>
+  );
+};
+
+// interface CountrySelect { 
+//   className: string;
+// }
 interface MyDatePickerProps {
   name: string;
 }
@@ -151,9 +161,15 @@ const MyDatePicker: React.FC<MyDatePickerProps> = ({name}) => {
 }
 
 export default function SignUp() {
-  // const details = useFieldValue(formik, 'hear');
+
+  const [newsletter, getNewsletter] = useState(true);
+
+  const handleChange = () => {
+    getNewsletter(current => !current);
+  };
+
   return (
-    <main className="flex flex-col justify-center flex-1 min-h-full px-6 py-12 text-center font-body lg:px-8">
+    <main className="font-body">
       <header className="sm:mx-auto sm:w-full sm:max-w-sm">
         <Image
             src={"signup.png"}
@@ -177,7 +193,7 @@ export default function SignUp() {
           phone: "",
           confirmEmail: "",
           acceptedTerms: true, // added for our checkbox
-          newsletter: 'yes',
+          newsletter: 'no',
           jobType: "", // added for our select
           password: "",
           defaultChecked: true,
@@ -191,65 +207,73 @@ export default function SignUp() {
         }}
       >
         {props => (
-          <Form className="font-body">
-            <div className="grid grid-cols-1 mt-10 gap-x-6 gap-y-8 sm:grid-cols-6">
+          <Form className="w-full max-w-lg mx-auto font-body">
+            <div className="w-full md:w-1/2 px-3">
               <TextInput 
+                className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                 label="First Name"
                 name="firstName"
                 type="text"
                 placeholder="First Name"
               />
             </div> 
-            <div className="sm:col-span-3">
+            <div className="w-full md:w-1/2 px-3 font-body">
               {/* className="block text-sm font-medium leading-6 text-gray-900" */}
               <TextInput 
+                className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                 label="Last Name"
                 name="lastName"
                 type="text"
                 placeholder="Last Name"
               />
             </div>
-            <div className="sm:col-span-4">
+            <div className="w-full md:w-1/2 px-3">
               <TextInput
+                className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                 label="Email Address"
                 name="email"
                 type="email"
                 placeholder="Email"
               />
             </div>
-            <Select label="Select Country" name="country">
+            <CountrySelect label="Select Country" name="country" className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
               <option value="Australia">Australia</option>
               <option value="Canada">Canada</option>
               <option value="United Kingdom">United Kingdom</option>
               <option value="United States">United States</option>
-            </Select>
-            <label>Date of Birth</label>
+            </CountrySelect>
+            <label className="">Date of Birth</label>
             <MyDatePicker name="dob"/>
             <TextInput
+              className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
               label="Address"
               name="address"
               type="text"
               placeholder=""
             />
             <TextInput
+              className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
               label="City"
               name="city"
               type="text"
               placeholder="City"
             />   
             <TextInput
+              className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
               label="State"
               name="state"
               type="text"
               placeholder=""
             />
             <TextInput
+              className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
               label="Postal/Zip code"
               name="postal"
               type="text"
               placeholder=""
             />
             <TextInput
+              className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
               label="Phone"
               name="phone"
               type="text"
@@ -260,12 +284,14 @@ export default function SignUp() {
               <option value="no">No</option>
             </Select>
             <TextInput
+              className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
               label="Confirm Email"
               name="confirmEmail"
               type="text"
               placeholder=""
             /> 
             <TextInput
+              className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
               label="Password"
               name="password"
               type="text"
@@ -310,15 +336,13 @@ export default function SignUp() {
               <MyRadio 
                 label="yes" 
                 name="newsletter"
-                value={'yes'}
-                defaultChecked={props.values.country === "United States" || props.values.country === "Canada"}>
+                value={"yes"}>
               Yes
               </MyRadio>
               <MyRadio 
                 label="no" 
                 name="newsletter"
-                value={'no'}
-                defaultChecked={props.values.country !== "United States" && props.values.country !== "Canada"}>
+                value={"no"}>
               No
               </MyRadio>           
             <button className="rounded-md bg-llorange-500 px-3 py-1.5 text-sm font-semibold leading-6 text-gray-100 shadow-sm hover:bg-llorange-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-llorange-600" type="submit">Submit</button>
