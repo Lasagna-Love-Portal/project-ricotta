@@ -20,7 +20,6 @@ jobs:
         uses: cachix/install-nix-action@v22
         with:
           nix_path: nixpkgs=channel:nixos-unstable
-      - run: npm install --save-dev typescript @types/react @types/node
       - run: NODE_ENV=production nix-shell --command "npx next build"
 
       - name: Upload artifact for deployment job
