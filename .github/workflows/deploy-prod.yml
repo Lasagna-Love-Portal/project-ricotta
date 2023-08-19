@@ -6,7 +6,7 @@ name: Build and deploy Node.js app to Azure Web App - projectricotta
 on:
   push:
     branches:
-      - main
+      - jroemer/add-nix
   workflow_dispatch:
 
 jobs:
@@ -37,7 +37,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     environment:
-      name: 'Production'
+      name: 'production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
@@ -50,7 +50,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'projectricotta'
-          slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E4B23C02E7E8489AB3A4E0257E6B8120 }}
+          app-name: 'project-ricotta'
+          slot-name: 'production'
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile_d2d2c70009f240628230c4cd05b1214b }}
           package: .
