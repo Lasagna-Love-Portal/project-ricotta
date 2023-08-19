@@ -22,8 +22,9 @@ jobs:
             nix_path: nixpkgs=channel:nixos-unstable
           run: nix-build
 
-      - name: npx build
+      - name: Enter nix env and run npx build
         run: |
+          nix-shell
           npx next build
 
       - name: Upload artifact for deployment job

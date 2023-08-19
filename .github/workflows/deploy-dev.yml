@@ -24,6 +24,7 @@ jobs:
 
       - name: npx build
         run: |
+          nix-shell
           npx next build
 
       - name: Upload artifact for deployment job
