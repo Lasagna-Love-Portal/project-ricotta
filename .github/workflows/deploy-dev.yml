@@ -19,12 +19,11 @@ jobs:
       - uses: cachix/install-nix-action@v22
         with:
           nix_path: nixpkgs=channel:nixos-unstable
-        run: nix-build
-
-      - name: npx build
         run: |
+          nix-build
           nix-shell
           npx next build
+
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
