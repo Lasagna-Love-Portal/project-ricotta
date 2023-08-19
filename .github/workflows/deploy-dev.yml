@@ -16,11 +16,14 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - uses: cachix/install-nix-action@v22
+      - name: Install nix
+        uses: cachix/install-nix-action@v22
         with:
           nix_path: nixpkgs=channel:nixos-unstable
+        run: nix-build
+
+      - name: Enter nix env and run npx build
         run: |
-          nix-build
           nix-shell
           npx next build
 
