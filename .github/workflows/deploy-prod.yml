@@ -16,16 +16,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Install nix
+      - name: Install nix and build
         uses: cachix/install-nix-action@v22
         with:
           nix_path: nixpkgs=channel:nixos-unstable
-        run: nix-build
-
-      - name: Enter nix env and run npx build
-        run: |
-          nix-shell
-          npx next build
+      - run: nix-build
+      - run: nix-shell --command "npx next build"
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
