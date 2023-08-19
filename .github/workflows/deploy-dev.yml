@@ -20,7 +20,6 @@ jobs:
         uses: cachix/install-nix-action@v22
         with:
           nix_path: nixpkgs=channel:nixos-unstable
-      - run: nix-build
       - run: nix-shell --command "npx next build"
 
       - name: Upload artifact for deployment job
