@@ -24,7 +24,7 @@ jobs:
         with:
           nix_path: nixpkgs=channel:nixos-unstable
       - run: nix-shell --command "npm ci"
-      - run: nix-shell --command "npx next build"\
+      - run: nix-shell --command "npx next build"
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
