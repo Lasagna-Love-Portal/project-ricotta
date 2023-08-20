@@ -10,7 +10,7 @@ Install [Nix](https://nixos.org/).
 
 1. `nix-shell` to enter the Nix environment
 2. `npx next build` to build the project
-3. `npx serve@latest out` to run the project using the default server
+3. `npx next dev` to run the project using the default server
 
 ### Debugging the app
 
