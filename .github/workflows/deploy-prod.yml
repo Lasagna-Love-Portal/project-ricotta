@@ -50,6 +50,6 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'project-ricotta'
-          slot-name: 'production'
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_d2d2c70009f240628230c4cd05b1214b }}
+          slot-name: 'project-ricotta-staging'
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E9045679A6BD4D8BAE5D9A0C30B3973B }}
           package: .
