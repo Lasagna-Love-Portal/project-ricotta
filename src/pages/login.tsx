@@ -39,7 +39,7 @@ export default function Login() {
                 ) => {
                     await AuthService.login(values.email, values.password);
                     // TODO: better handle login errors
-                    window.location.replace("/landing");
+                    window.location.replace("/portal/dashboard");
                 }}
             >
                 <Form>
