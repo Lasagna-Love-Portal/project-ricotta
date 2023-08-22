@@ -1,2 +1,0 @@
-# This file is an override to the development / default docker-compose.
-# It changes the target docker stage from dev to prod. It also removes the volume mount.

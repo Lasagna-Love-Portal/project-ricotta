@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "npx next dev",
+    "build": "npx next build",
+    "start": "npx serve@latest out -p $PORT",
+    "lint": "npx next lint",
+    "postinstall": "npx next build"
   },
   "dependencies": {
     "@emotion/react": "^11.10.6",
