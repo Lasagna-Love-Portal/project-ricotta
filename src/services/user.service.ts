@@ -7,7 +7,7 @@ import { RecipientInfo } from '@/model/RecipientInfo';
 import { Profile } from '@/model/Profile';
 
 // TODO: un hard-code the URL string, obtain from elsewhere
-const API_URL = ${{ secrets.API_URL }};
+const API_URL = ${{ secrets.API_URL }}
 
 class UserService {
     async getCurrentUserProfile() : Promise<Profile> {
