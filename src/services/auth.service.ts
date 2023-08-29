@@ -2,7 +2,7 @@ import axios, { AxiosResponse } from "axios";
 import jwt_decode from "jwt-decode";
 
 // TODO: un hard-code the URL string, obtain from elsewhere
-const API_URL = "http://localhost:8080/dev/";
+import {API_URL} from './url.service';
 
 interface BechamelAccessToken {
     exp: number,

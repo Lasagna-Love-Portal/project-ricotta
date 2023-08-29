@@ -5,9 +5,7 @@ import { Attestations } from '@/model/Attestations';
 import { VolunteerInfo } from '@/model/VolunteerInfo';
 import { RecipientInfo } from '@/model/RecipientInfo';
 import { Profile } from '@/model/Profile';
-
-// TODO: un hard-code the URL string, obtain from elsewhere
-const API_URL = 'http://localhost:8080/dev/';
+import {API_URL} from './url.service';
 
 class UserService {
     async getCurrentUserProfile() : Promise<Profile> {
