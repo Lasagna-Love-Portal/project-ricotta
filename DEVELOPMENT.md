@@ -9,7 +9,7 @@ Install [Nix](https://nixos.org/).
 ### Building and Running the app (dev mode)
 
 1. `nix-shell` to enter the Nix environment
-2. `npm ci` to install our dependencies
+2. `npm install && npm ci` to install our dependencies
 3. `npx next build` to build the project
 4. `npx next dev` to run the project using the default server
 
