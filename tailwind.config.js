@@ -19,7 +19,7 @@ module.exports = {
       fontFamily: {
         sans: ['var(--font-inter)'],
         mono: ['var(--font-roboto-mono)'],
-        body: ['var(--font-lato']
+        body: ['var(--font-lato)']
       }
     }
   },
